@@ -7,12 +7,12 @@ while len(digitos_separados) != 11:
     digitos_separados = [char for char in cpf if char.isdigit()]
 
 digitos_separados = digitos_separados[:9]
-total = 0
+digito_1 = 0
 
 for indice, digito in enumerate(digitos_separados, start=0):
-    total += int(digito) * (10 - indice)
+    digito_1 += int(digito) * (10 - indice)
     
-digito_1 = (total * 10) % 11
+digito_1 = (digito_1 * 10) % 11
 digito_1 = str(0 if digito_1 > 9 else digito_1)
 
 digitos_separados.append(digito_1)
