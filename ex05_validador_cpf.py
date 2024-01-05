@@ -8,15 +8,13 @@ while tamanho_lista != 11:
     digitos_separados = [char for char in cpf if char.isdigit()]
     tamanho_lista = len(digitos_separados)
 
-multiplo = 10
 total = 0
 
-for digito in digitos_separados[:9]:
-    total += int(digito) * multiplo
-    multiplo -= 1
+for indice, digito in enumerate(digitos_separados[:9], start=0):
+    total += int(digito) * (10 - indice)    
 
-total = (total * 10) % 11
-digito_1 = 0 if total > 9 else total
+digito_1 = (total * 10) % 11
+digito_1 = 0 if digito_1 > 9 else digito_1
 
 if digito_1 == int(digitos_separados[9]):
     print('1º dígito do CPF válido')
