@@ -35,4 +35,3 @@ if cpf[9] == digito_1 and cpf[10] == digito_2:
     print('CPF válido ')
 else:
     print('CPF inválido ')
-print(sequencial)
