@@ -1,8 +1,9 @@
 cpf = input('Informe o CPF: ')
 
 digitos_separados = [char for char in cpf if char.isdigit()]
+digitos_repetidos = digitos_separados[0] * len(digitos_separados)
 
-while len(digitos_separados) != 11:
+while len(digitos_separados) != 11 or digitos_repetidos == ''.join(digitos_repetidos):
     cpf = input('CPF inválido, digite novamente: ')
     digitos_separados = [char for char in cpf if char.isdigit()]
 
